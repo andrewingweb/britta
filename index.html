@@ -393,37 +393,68 @@
       <hr />
       <form class="message note">
         <h2>Feiertag in Höhe Kug</h2>
-        <label for="">Wochenstunden</label>
-        <input type="text" id="firstNumber" placeholder="Wochenstunden" /><br />
-        <label for="">Gehalt</label>
-        <input type="text" id="secondNumber" placeholder="Gehalt" /><br />
-        <label for="">VL</label>
-        <input type="text" id="thirdNumber" placeholder="VL" /><br />
-        <label for="">Soll Arbeitszeit</label>
-        <input
-          type="text"
-          id="fourthNumber"
-          placeholder="Soll Arbeitszeit"
-        /><br />
-        <label for="">Ausfallstunden</label>
-        <input
-          type="text"
-          id="fifthNumber"
-          placeholder="Ausfallstunden"
-        /><br />
-        <label for="">Feiertagsstunden</label>
-        <input
-          type="text"
-          id="sixthNumber"
-          placeholder="Feiertagsstunden"
-        /><br />
-        <label for="">Kug nach LVO</label>
-        <input
-          type="text"
-          id="seventhNumber"
-          placeholder="Kug (ges) nach LVO"
-        /><br />
+        <div class="list-container">
+          <span class="lab-title">
+            <label for="">Wochenstunden</label><br />
+            <label for="">Gehalt</label><br />
+            <label for="">VL</label><br />
+            <label for="">Soll Arbeitszeit</label><br />
+            <label for="">Ausfallstunden</label><br />
+            <label for="">Feiertagsstunden</label><br />
+            <label for="">Kug nach LVO</label><br />
+          </span>
+          <span>
+            <input
+              type="text"
+              class="list"
+              id="firstNumber"
+              placeholder="Wochenstunden"
+            /><br />
 
+            <input
+              type="text"
+              class="list"
+              id="secondNumber"
+              placeholder="Gehalt"
+            /><br />
+
+            <input
+              type="text"
+              class="list"
+              id="thirdNumber"
+              placeholder="VL"
+            /><br />
+
+            <input
+              type="text"
+              class="list"
+              id="fourthNumber"
+              placeholder="Soll Arbeitszeit"
+            /><br />
+
+            <input
+              type="text"
+              class="list"
+              id="fifthNumber"
+              placeholder="Ausfallstunden"
+            /><br />
+
+            <input
+              type="text"
+              class="list"
+              id="sixthNumber"
+              placeholder="Feiertagsstunden"
+            /><br />
+
+            <input
+              type="text"
+              class="list"
+              id="seventhNumber"
+              placeholder="Kug (ges) nach LVO"
+            /><br />
+          </span>
+        </div>
+        <br>
         <input type="button" onClick="multiplyBy()" value="Berechnen" />
         <!-- <input type="button" onClick="divideBy()" value="Div" /> -->
         <p>
@@ -456,7 +487,9 @@
         </p>
       </form>
       <hr />
-      <h2 style="text-align:center">Berücksichtigung bei Soll- und Ist-Entgelt</h2>
+      <h2 style="text-align: center">
+        Berücksichtigung bei Soll- und Ist-Entgelt
+      </h2>
       <table>
         <thead>
           <tr>
