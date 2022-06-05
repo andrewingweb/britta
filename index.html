@@ -385,32 +385,37 @@
       <!-- <hr />
       <h2>Title</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, expedita.</p> -->
-      <a href="https://www.rechner.club/feiertage/gesetzliche-feiertage-berechnen" Target="_blank">Feiertagsrechner</a><br><br><hr>
+      <a
+        href="https://www.rechner.club/feiertage/gesetzliche-feiertage-berechnen"
+        target="_blank"
+        >Feiertagsrechner</a
+      ><br /><br />
+      <hr />
       <form class="message note">
         <h2>Feiertag in Höhe Kug</h2>
-        <input type="text" id="firstNumber" placeholder="Wochenstunden" /><br />
-        <input type="text" id="secondNumber" placeholder="Gehalt" /><br />
-        <input type="text" id="thirdNumber" placeholder="VL" /><br />
+        <input type="text" id="firstNumber" placeholder="Wochenstunden" /><br />Wochenstunden<br />
+        <input type="text" id="secondNumber" placeholder="Gehalt" /><br />Gehalt<br />
+        <input type="text" id="thirdNumber" placeholder="VL" /><br />VL<br />
         <input
           type="text"
           id="fourthNumber"
           placeholder="Soll Arbeitszeit"
-        /><br />
+        /><br />Soll Arbeitszeit<br />
         <input
           type="text"
           id="fifthNumber"
           placeholder="Ausfallstunden"
-        /><br />
+        /><br />Ausfallstunden<br />
         <input
           type="text"
           id="sixthNumber"
           placeholder="Feiertagsstunden"
-        /><br />
+        /><br />Feiertagsstunden<br />
         <input
           type="text"
           id="seventhNumber"
           placeholder="Kug (ges) nach LVO"
-        /><br />
+        /><br />Kug (ges) nach LVO<br />
 
         <input type="button" onClick="multiplyBy()" value="Berechnen" />
         <!-- <input type="button" onClick="divideBy()" value="Div" /> -->
@@ -443,6 +448,183 @@
           <span id="result7"></span>
         </p>
       </form>
+      <hr />
+      <h2 style="text-align:center">Berücksichtigung bei Soll- und Ist-Entgelt</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Entgelt-bestandteil</th>
+            <th>Berück-sichtigung beim Soll-Entgelt</th>
+            <th>Berück-sichtigung beim Ist-Entgelt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gehalt</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Stundenlohn</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Akkordlohn</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Arbeitgeberanteil zur tariflichen Zusatzrente</td>
+            <td>Nein</td>
+            <td>Nein</td>
+          </tr>
+          <tr>
+            <td>Arbeitnehmeranteil zur tariflichen Zusatzrente</td>
+            <td>Ja, wenn sozial-versicherungs-pflichtig</td>
+            <td>Ja, wenn sozial-versicherungs-pflichtig</td>
+          </tr>
+          <tr>
+            <td>Bonus/Malus bei Leistungslohn</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>
+              Einmalzahlungen (zum Beispiel: Urlaubsgeld, Weihnachtsgeld, 13.
+              Monatseinkommen)
+            </td>
+            <td>Nein</td>
+            <td>Nein</td>
+          </tr>
+          <tr>
+            <td>Entgelt und Zuschläge für Mehrarbeit</td>
+            <td>Nein</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Entgeltfortzahlung</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Erschwerniszulage</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Feiertage</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>
+              Beitragspflichtige Zuschläge für Sonntags-, Feiertags- und
+              Nachtarbeit
+            </td>
+            <td>Nein</td>
+            <td>Nein</td>
+          </tr>
+          <tr>
+            <td>Kraftfahrzeug-Nutzung</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Personenkraftwagen-Wert geldwerter Vorteil</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Krankengeld/GTL (Gesamttariflohn)</td>
+            <td>GTL pro Ausfallstunde</td>
+            <td>GTL pro Ausfallstunde</td>
+          </tr>
+          <tr>
+            <td>Leistungszulagen</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Abwesenheitsprämie</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Mehraufwand-Wintergeld</td>
+            <td>Nein</td>
+            <td>Nein</td>
+          </tr>
+          <tr>
+            <td>Nebeneinkommen</td>
+            <td>Nein</td>
+            <td>Ja, wenn im Kurzarbeitergeld-Zeitraum aufgenommen wurde</td>
+          </tr>
+          <tr>
+            <td>Provision einmalig</td>
+            <td>Nein</td>
+            <td>Nein</td>
+          </tr>
+          <tr>
+            <td>Provision laufend</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Sachbezug (zum Beispiel: Verpflegung und Unterkunft)</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Sonn.- und Feiertagszulagen</td>
+            <td>Nein</td>
+            <td>Nein</td>
+          </tr>
+          <tr>
+            <td>Überstunden</td>
+            <td>Nein</td>
+            <td>Ja, außer Guthabenstunden für Ausgleichskonto</td>
+          </tr>
+          <tr>
+            <td>Unbezahlter Urlaub/Fehltage</td>
+            <td>GTL pro Ausfallstunde</td>
+            <td>GTL pro Ausfallstunde</td>
+          </tr>
+          <tr>
+            <td>
+              Kindertagesstätte-Zuschuss, wenn Sozialversicherungspflichtig und
+              Steuerpflichtig
+            </td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Zulage Altersversorgung</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Zuschuss Pensionskasse</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Urlaubsabgeltung</td>
+            <td>Nein</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Urlaubsentgelt</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>Vermögenswirksame Leistungen (VWL)</td>
+            <td>Ja</td>
+            <td>Ja</td>
+          </tr>
+        </tbody>
+      </table>
       <!-- <div class="gallery">
         <a href="https://i.imgur.com/uh5YLj5.jpg" title="" data-fluidbox class="col-2"><img src="https://i.imgur.com/uh5YLj5.jpg" alt="" title="" /></a>
         <a href="https://i.imgur.com/UvGHJjo.jpg" title="" data-fluidbox class="col-2"><img src="https://i.imgur.com/UvGHJjo.jpg" alt="" title="" /></a>
