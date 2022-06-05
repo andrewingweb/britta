@@ -1,21 +1,22 @@
 html {
+    scroll-behavior: smooth;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-  }
-  
-  body {
+}
+
+body {
     color: #333;
     height: 100%;
     line-height: 1.5em;
     margin-bottom: 1.5em;
-  }
-  
-  main {
+}
+
+main {
     margin: 0 auto;
     width: 66.66667%;
-  }
-  
-  header {
+}
+
+header {
     background-color: rgb(241, 17, 17);
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
     box-sizing: border-box;
@@ -28,8 +29,9 @@ html {
     left: -25%;
     width: 150%;
     transition: all 0.25s ease-in-out;
-  }
-  header:before {
+}
+
+header:before {
     background-image: linear-gradient(115deg, rgba(241, 20, 20, 0.025) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(to left, #005952 0%, #005e20 100%);
     content: "";
     opacity: 0;
@@ -39,171 +41,194 @@ html {
     right: 0;
     bottom: 0;
     transition: all 0.25s ease-in-out;
-  }
-  header:hover:before {
+}
+
+header:hover:before {
     opacity: 1;
-  }
-  header > * {
+}
+
+header>* {
     position: relative;
-  }
-  header h1 {
+}
+
+header h1 {
     font-weight: bold;
     font-size: 3em;
     line-height: 1em;
     margin: 0 0 0.5rem 0;
     text-align: center;
-  }
-  header .byline {
+}
+
+header .byline {
     color: rgba(255, 255, 255, 0.75);
     display: block;
     font-size: 0.8em;
     letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
-  }
-  
-  p {
+}
+
+p {
     margin-bottom: 1.5rem;
-  }
-  
-  .message {
+}
+
+.message {
     background-color: #fd9f8a;
     border-left: 0.75rem solid rgb(241, 17, 17);
     padding: 0.75rem 1.5rem;
     font-size: 0.85rem;
-  }
-  .message a:hover {
+}
+
+.message a:hover {
     border-color: rgba(0, 0, 0, 0.5);
     color: rgba(0, 0, 0, 0.5);
-  }
-  .message.note {
+}
+
+.message.note {
     background-color: #7bcdc8;
     border-color: #00a99d;
     align-items: center;
     text-align: center;
-  }
-  
-  hr {
+}
+
+hr {
     border: none;
     border-top: 0.125rem solid #ddd;
     margin-bottom: 1.375rem;
-  }
-  
-  a {
+}
+
+a {
     border-bottom: 2px solid #333;
     color: #333;
     text-decoration: none;
     transition: all 0.125s ease-in-out;
-  }
-  a:hover {
+}
+
+a:hover {
     border-bottom-color: #4a7298;
     color: #4a7298;
-  }
-  
-  ul {
+}
+
+ul {
     margin-top: -0.75rem;
-  }
-  
-  code {
+}
+
+code {
     background-color: rgba(0, 0, 0, 0.125);
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 4px;
     display: inline-block;
     margin: 0 0.125em;
     padding: 0 0.25em;
-  }
-  
-  /* Cards */
-  .cards {
+}
+
+/* Cards */
+.cards {
     border-radius: 0.25rem;
     display: flex;
     flex-flow: row nowrap;
     margin-bottom: 1.5rem;
     overflow: hidden;
-  }
-  .cards > a {
+}
+
+.cards>a {
     box-sizing: border-box;
     border: none;
     flex: 1 100%;
     padding: 1.5rem;
     text-align: center;
-  }
-  .cards > a svg {
+}
+
+.cards>a svg {
     display: block;
     margin: 0 auto 0.75rem;
     width: 5.25rem;
     height: 5.25rem;
     transition: all 0.125s ease-in-out;
-  }
-  .cards > a svg path {
+}
+
+.cards>a svg path {
     transition: fill 0.125s ease-in-out;
-  }
-  .cards > a:first-child {
+}
+
+.cards>a:first-child {
     background-color: #333;
     color: #eee;
-  }
-  .cards > a:first-child svg {
+}
+
+.cards>a:first-child svg {
     background-color: #eee;
-  }
-  .cards > a:first-child svg path {
+}
+
+.cards>a:first-child svg path {
     fill: #333;
-  }
-  .cards > a:first-child:hover {
+}
+
+.cards>a:first-child:hover {
     background-color: #222;
     color: #57ad68;
-  }
-  .cards > a:first-child:hover svg {
+}
+
+.cards>a:first-child:hover svg {
     background-color: #57ad68;
-  }
-  .cards > a:first-child:hover svg path {
+}
+
+.cards>a:first-child:hover svg path {
     fill: #222;
-  }
-  .cards > a:last-child {
+}
+
+.cards>a:last-child {
     background-color: #eee;
     color: #555;
-  }
-  .cards > a:last-child svg path {
+}
+
+.cards>a:last-child svg path {
     fill: #333;
-  }
-  .cards > a:last-child:hover {
+}
+
+.cards>a:last-child:hover {
     background-color: #ccc;
-  }
-  
-  /* Fluidbox styling starts here */
-  a[data-fluidbox] {
+}
+
+/* Fluidbox styling starts here */
+a[data-fluidbox] {
     background-color: #eee;
     border: none;
     cursor: -webkit-zoom-in;
     cursor: -moz-zoom-in;
     margin-bottom: 1.5rem;
-  }
-  a[data-fluidbox].fluidbox-opened {
+}
+
+a[data-fluidbox].fluidbox-opened {
     cursor: -webkit-zoom-out;
     cursor: -moz-zoom-out;
-  }
-  a[data-fluidbox] img {
+}
+
+a[data-fluidbox] img {
     display: block;
     margin: 0 auto;
     opacity: 0;
     max-width: 100%;
     transition: all 0.25s ease-in-out;
-  }
-  
-  a[class^=float] {
+}
+
+a[class^=float] {
     margin: 1rem;
     margin-top: 0;
     width: 33.33333%;
-  }
-  a[class^=float].float-left {
+}
+
+a[class^=float].float-left {
     float: left;
     margin-left: 0;
-  }
-  a[class^=float].float-right {
+}
+
+a[class^=float].float-right {
     float: right;
     margin-right: 0;
-  }
-  
-  #fluidbox-overlay {
+}
+
+#fluidbox-overlay {
     background-color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
     cursor: -webkit-zoom-out;
@@ -215,169 +240,176 @@ html {
     bottom: 0;
     right: 0;
     z-index: 500;
-  }
-  
-  .fluidbox-wrap {
+}
+
+.fluidbox-wrap {
     background-position: center center;
     background-size: cover;
     margin: 0 auto;
     position: relative;
     z-index: 400;
     transition: all 0.25s ease-in-out;
-  }
-  .fluidbox-opened .fluidbox-wrap {
+}
+
+.fluidbox-opened .fluidbox-wrap {
     z-index: 600;
-  }
-  
-  .fluidbox-ghost {
+}
+
+.fluidbox-ghost {
     background-size: cover;
     background-position: center center;
     position: absolute;
     transition: all 0.25s ease-in-out;
-  }
-  
-  .gallery {
+}
+
+.gallery {
     display: flex;
     -webkit-flex-flow: row wrap;
     /* Fix for iOS */
     flex-flow: row wrap;
     justify-content: space-between;
-  }
-  .gallery a {
-    margin-bottom: 1rem;
-  }
-  .gallery a.col-2 {
-    width: 49%;
-  }
-  .gallery a.col-3 {
-    width: 32%;
-  } 
+}
 
-  .list-container {
+.gallery a {
+    margin-bottom: 1rem;
+}
+
+.gallery a.col-2 {
+    width: 49%;
+}
+
+.gallery a.col-3 {
+    width: 32%;
+}
+
+.list-container {
     display: flex;
     justify-content: center;
-  }
-  .lab-title{
-      text-align: right;
-      padding-right: 5px;
-  }
-   
-  /* Media queries, unrelated to functionality of Fluidbox */
-  @media only screen and (max-width: 768px) {
-    .cards {
-      flex-flow: row wrap;
-    }
-  
-    a[class^=float] {
-      width: 50%;
-    }
-  }
-  @media only screen and (max-width: 600px) {
-    .gallery a,
-  .gallery a[class^=col] {
-      margin-bottom: 0.5rem;
-      width: 100%;
-    }
-  }
-  @media only screen and (max-width: 480px) {
-    html {
-      font-size: 12px;
-    }
-  
-    .message {
-      border: 0;
-      border-top: 0.75rem solid #f26c4f;
-    }
-  
-    a[class^=float] {
-      float: none;
-      margin: 0 0 1rem 0;
-      width: 100%;
-    }
-  }
+}
 
-  table {
+.lab-title {
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* Media queries, unrelated to functionality of Fluidbox */
+@media only screen and (max-width: 768px) {
+    .cards {
+        flex-flow: row wrap;
+    }
+
+    a[class^=float] {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .gallery a,
+    .gallery a[class^=col] {
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    .message {
+        border: 0;
+        border-top: 0.75rem solid #f26c4f;
+    }
+
+    a[class^=float] {
+        float: none;
+        margin: 0 0 1rem 0;
+        width: 100%;
+    }
+}
+
+table {
     border: 1px solid #ccc;
     border-collapse: collapse;
     margin: 0;
     padding: 0;
     width: 100%;
     table-layout: fixed;
-  }
-  
-  
-  table caption {
+}
+
+
+table caption {
     font-size: 1.5em;
     margin: .5em 0 .75em;
-  }
-  
-  table tr {
+}
+
+table tr {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     padding: .35em;
-  }
-  
-  table th,
-  table td {
+}
+
+table th,
+table td {
     padding: .625em;
     text-align: left;
-  }
-  
-  table th {
+}
+
+table th {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
-  }
-  
-  @media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
     table {
-      border: 0;
+        border: 0;
     }
-  
+
     table caption {
-      font-size: 1.3em;
+        font-size: 1.3em;
     }
-    
+
     table thead {
-    background-color: #333;
-      color: #fdfdfd;
-      border: none;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-      
+        background-color: #333;
+        color: #fdfdfd;
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+
     }
-    
+
     table tr {
-      border-bottom: 3px solid #ddd;
-      display: block;
-      margin-bottom: .625em;
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
     }
-    
+
     table td {
-      border-bottom: 1px solid #ddd;
-      display: block;
-      font-size: .8em;
-      text-align: right;
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
     }
-    
+
     table td::before {
-      /*
+        /*
       * aria-label has no advantage, it won't be read inside a table
       content: attr(aria-label);
       */
-      content: attr(data-label);
-      float: left;
-      font-weight: bold;
-      text-transform: uppercase;
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
     }
-    
+
     table td:last-child {
-      border-bottom: 0;
+        border-bottom: 0;
     }
-  }
-  
+}

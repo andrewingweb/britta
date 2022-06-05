@@ -144,10 +144,17 @@
         <label for="vehicle1"> Ist das Soll-Entgelt richtig berechnet?</label
         ><br />
         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-        <label for="vehicle1"> Ist das Ist-Entgelt richtig berechnet?</label
+        <label for="vehicle1">
+          Ist das <a href="#rechner">Ist-Entgelt </a>richtig berechnet?</label
         ><br />
         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-        <label for="vehicle1"> Wurden Feiertage im Kug abgerechtnet?</label
+        <label for="vehicle1">
+          Wurden Feiertage im Kug abgerechtnet?
+          <a
+            href="https://www.rechner.club/feiertage/gesetzliche-feiertage-berechnen"
+            target="_blank"
+            >Feiertagsrechner</a
+          ></label
         ><br />
         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
         <label for="vehicle1"> Wurden Quarantänefälle beachtet?</label><br />
@@ -392,7 +399,7 @@
       ><br /><br />
       <hr />
       <form class="message note">
-        <h2>Feiertag in Höhe Kug</h2>
+        <h2 id="rechner">Feiertag in Höhe Kug</h2>
         <div class="list-container">
           <span class="lab-title">
             <label for="firstNumber">Wochenstunden</label><br />
@@ -454,7 +461,7 @@
             /><br />
           </span>
         </div>
-        <br>
+        <br />
         <input type="button" onClick="multiplyBy()" value="Berechnen" />
         <!-- <input type="button" onClick="divideBy()" value="Div" /> -->
         <p>
