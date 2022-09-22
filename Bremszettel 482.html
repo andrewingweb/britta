@@ -28,7 +28,7 @@
       <fieldset>
         <legend>Bremszettel</legend>
         <p>Baureihe 482</p>
-        
+
         <p>Fahrplan in:</p>
         <form action="/action_page.php">
             <input type="radio" id="R" name="fahrplan" value="1,5" />  
@@ -52,8 +52,6 @@
         <label>Bremsgewicht [t]:</label>
         <input type="number" id="bg" /><br /><br />
 
-        <span>Additional Requirements:</span><br /><br />
-
         <input
           class="button"
           type="button"
@@ -62,17 +60,24 @@
         />
 
         <div id="sky-result"></div>
-        <br>
+        <br />
         <div id="sky-result1"></div>
-        <br>
+        <br />
         <div id="sky-result2"></div>
-        <br>
+        <br />
         <div id="sky-result3"></div>
-        <br>
+        <br />
         <div id="sky-result4"></div>
-        <br>
+        <br />
         <div id="sky-result5"></div>
-        <br>
+        <br />
+        <span>LZB/PZB Eingaben:</span><br /><br />
+        <div id="sky-result6"></div>
+        <br />
+        <div id="sky-result7"></div>
+        <br />
+        <div id="sky-result8"></div>
+        <br />
       </fieldset>
     </form>
     <script>
@@ -80,7 +85,7 @@
         var zl = parseInt(document.getElementById("zl").value);
         var gg = parseInt(document.getElementById("gg").value);
         var bg = parseInt(document.getElementById("bg").value);
-        
+
         var checkbox4 = document.getElementById("R");
         var checkbox5 = document.getElementById("P");
         var checkbox6 = document.getElementById("G");
@@ -92,12 +97,11 @@
         var geszl;
         var brh;
         var gesbg;
+        var lzbbrh;
 
-
-        
         zg = 84;
         ll = 18.9;
-        
+
         if (checkbox4.checked == true) {
           zbg = zg * 1.5;
         }
@@ -116,9 +120,9 @@
           zbg = zbg * 1;
         }
         if (gg >= 800) {
-          zbg = (zg * 0.869047619047619) * 0.75;
+          zbg = zg * 0.869047619047619 * 0.75;
         }
-        
+
         document.getElementById("sky-result1").innerHTML = [
           "Bremsgewicht Tfz = " + Math.floor(zbg).toFixed(0) + " t",
         ];
@@ -128,7 +132,7 @@
         document.getElementById("sky-result2").innerHTML = [
           "Gesamtzuglänge = " + geszl.toFixed(0) + " m",
         ];
-        
+
         geszg = zg + gg;
 
         document.getElementById("sky-result3").innerHTML = [
@@ -136,7 +140,7 @@
         ];
 
         gesbg = bg + zbg;
-        brh = gesbg * 100 / geszg;
+        brh = (gesbg * 100) / geszg;
 
         document.getElementById("sky-result4").innerHTML = [
           "BrH = " + Math.floor(brh),
@@ -145,6 +149,24 @@
           "Tfz Länge = " + ll.toFixed(0) + " m",
         ];
 
+        if (brh > 0 && brh < 66) {
+          lzbbrh = 50;
+        }
+        if (brh > 66 && brh < 76) {
+          lzbbrh = 70;
+        }
+        if (brh > 76 && brh < 95) {
+          lzbbrh = 80;
+        }
+        if (brh > 95 && brh < 101) {
+          lzbbrh = 80;
+        }
+        if (brh > 101 && brh < 111) {
+          lzbbrh = 100;
+        }
+        document.getElementById("sky-result6").innerHTML = [
+          "LZB/PZB BrH = " + lzbbrh,
+        ];
       }
     </script>
   </body>
