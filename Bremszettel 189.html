@@ -38,7 +38,7 @@
             type="radio"
             id="P"
             name="fahrplan"
-            value="1,068965517241379"
+            value="1.068965517241379"
           />
             <label for="br193">P</label><br />
            
@@ -52,7 +52,7 @@
         <label>Bremsgewicht [t]:</label>
         <input type="number" id="bg" /><br /><br />
 
-        <span>Additional Requirements:</span><br /><br />
+        
 
         <input
           class="button"
@@ -68,6 +68,10 @@
         <div id="sky-result2"></div>
         <br>
         <div id="sky-result3"></div>
+        <br>
+        <div id="sky-result4"></div>
+        <br>
+        <div id="sky-result5"></div>
         <br>
       </fieldset>
     </form>
@@ -86,6 +90,8 @@
         var ll;
         var geszg;
         var geszl;
+        var brh;
+        var gesbg;
 
         
         zg = 87;
@@ -125,6 +131,15 @@
 
         document.getElementById("sky-result3").innerHTML = [
           "Gesamtzuggewicht = " + geszg.toFixed(0) + " t",
+        ];
+        gesbg = bg + zbg;
+        brh = gesbg * 100 / geszg;
+
+        document.getElementById("sky-result4").innerHTML = [
+          "BrH = " + Math.floor(brh),
+        ];
+        document.getElementById("sky-result5").innerHTML = [
+          "Tfz Länge = " + ll.toFixed(0) + " m",
         ];
       }
     </script>
