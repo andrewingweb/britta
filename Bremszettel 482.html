@@ -164,7 +164,33 @@
         if (brh > 101 && brh < 111) {
           lzbbrh = 100;
         }
+        if (brh > 111 && brh < 119) {
+          lzbbrh = 120;
+        }
+        if (brh > 119 && brh < 134) {
+          lzbbrh = 120;
+        }
+        if (brh > 134 && brh < 144) {
+          lzbbrh = 130;
+        }
+        if (brh > 144 && brh < 162) {
+          lzbbrh = 140;
+        }
+        var lzbbra;
+        
+        if (geszl > ll) {
+          lzbbra = 4;
+        }
+        if (geszl == ll) {
+          lzbbra = 9;
+        }
+
         document.getElementById("sky-result6").innerHTML = [
+          "BRA = " + lzbbra,
+        ];
+
+
+        document.getElementById("sky-result7").innerHTML = [
           "LZB/PZB BrH = " + lzbbrh,
         ];
 
@@ -172,7 +198,7 @@
 
         
 
-        document.getElementById("sky-result7").innerHTML = [
+        document.getElementById("sky-result8").innerHTML = [
           "ZL = " + Math.round(geszl/10) * 10,
         ];
       }
