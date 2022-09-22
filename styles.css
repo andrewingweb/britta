@@ -289,12 +289,16 @@ a[class^=float].float-right {
 }
 
 .list-container {
-    display: flex;
-    justify-content: center;
+    
+    justify-content: left;
+}
+.list {
+    width: 100%;
+    
 }
 
 .lab-title {
-    text-align: right;
+    text-align: left;
     padding-right: 5px;
 }
 
@@ -337,11 +341,11 @@ a[class^=float].float-right {
 
 table {
     border: 1px solid #ccc;
-    border-collapse: collapse;
+    
     margin: 0;
     padding: 0;
     width: 100%;
-    table-layout: fixed;
+    
 }
 
 
@@ -359,16 +363,16 @@ table tr {
 table th,
 table td {
     padding: .625em;
-    text-align: left;
+    text-align: center;
 }
 
 table th {
     font-size: .85em;
     letter-spacing: .1em;
-    text-transform: uppercase;
+    
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 100px) {
     table {
         border: 0;
     }
@@ -384,9 +388,9 @@ table th {
         clip: rect(0 0 0 0);
         height: 1px;
         margin: -1px;
-        overflow: hidden;
+        overflow: none;
         padding: 0;
-        position: absolute;
+        position: relative;
         width: 1px;
 
     }
@@ -399,9 +403,9 @@ table th {
 
     table td {
         border-bottom: 1px solid #ddd;
-        display: block;
+        display: inline-block;
         font-size: .8em;
-        text-align: right;
+        text-align: left;
     }
 
     table td::before {
@@ -410,9 +414,9 @@ table th {
       content: attr(aria-label);
       */
         content: attr(data-label);
-        float: left;
+        float: top;
         font-weight: bold;
-        text-transform: uppercase;
+        
     }
 
     table td:last-child {
