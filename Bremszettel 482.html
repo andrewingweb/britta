@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <style>
+    html {
+      box-sizing: border-box;
+    }
+
     body {
       width: 800px;
       margin: 50px auto;
@@ -8,7 +12,13 @@
       font-family: Tahoma, sans-serif;
       letter-spacing: 0.5px;
     }
+    main {
+      margin: 0 auto;
+      width: 66.66667%;
+    }
     fieldset {
+      align-items: center;
+      width: 45%;
       padding: 1em;
       border: 1px solid darkblue;
     }
@@ -177,7 +187,7 @@
           lzbbrh = 140;
         }
         var lzbbra;
-        
+
         if (geszl > ll) {
           lzbbra = 4;
         }
@@ -185,10 +195,7 @@
           lzbbra = 9;
         }
 
-        document.getElementById("sky-result6").innerHTML = [
-          "BRA = " + lzbbra,
-        ];
-
+        document.getElementById("sky-result6").innerHTML = ["BRA = " + lzbbra];
 
         document.getElementById("sky-result7").innerHTML = [
           "LZB/PZB BrH = " + lzbbrh,
@@ -196,10 +203,8 @@
 
         var lzbzl;
 
-        
-
         document.getElementById("sky-result8").innerHTML = [
-          "ZL = " + Math.round(geszl/10) * 10,
+          "ZL = " + Math.round(geszl / 10) * 10,
         ];
       }
     </script>
