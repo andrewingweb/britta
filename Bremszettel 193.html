@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bremszettel</title>
+  <link href="styles.css" rel="stylesheet" />
   <style>
-    body {
-      width: 800px;
-      margin: 50px auto;
-      background-color: #fff;
-      font-family: Tahoma, sans-serif;
-      letter-spacing: 0.5px;
-    }
-    fieldset {
-      padding: 1em;
-      border: 1px solid darkblue;
-    }
-    br {
-      line-height: 225%;
-    }
-    .button {
-      padding: 0.5em;
-    }
-    #sky-result {
-      height: 1em;
-      padding-top: 10px;
+    html {
+      scroll-behavior: smooth;
     }
   </style>
-  <body>
-    <form id="skydiving-form">
-      <fieldset>
-        <legend>Bremszettel</legend>
-        <p>Baureihe 193</p>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Bremszettel</h1>
+    </header>
+  </main>
+
+      <div class="message">
+        
+        <h2>Baureihe 193</h2>
         
         <p>Fahrplan in:</p>
-        <form action="/action_page.php">
+        
             <input type="radio" id="R" name="fahrplan" value="1,505747126436782" />  
           <label for="br482">R</label><br />
            
@@ -44,37 +39,42 @@
            
           <input type="radio" id="G" name="fahrplan" value="0,9080459770114943" />
             <label for="br189">G</label><br /><br />
-        </form>
-        <label>Zuglänge [m]:</label>
-        <input type="number" id="zl" /><br /><br />
-        <label>Wagenzuggewicht [t]:</label>
-        <input type="number" id="gg" /><br /><br />
-        <label>Bremsgewicht [t]:</label>
-        <input type="number" id="bg" /><br /><br />
-
-        <span>Additional Requirements:</span><br /><br />
-
-        <input
-          class="button"
-          type="button"
-          onclick="skyCalculate();"
-          value="Rechnen"
-        />
-
-        <div id="sky-result"></div>
-        <br />
-        <div id="sky-result1"></div>
-        <br>
-        <div id="sky-result2"></div>
-        <br>
-        <div id="sky-result3"></div>
-        <br>
-        <div id="sky-result4"></div>
-        <br>
-        <div id="sky-result5"></div>
-        <br>
-      </fieldset>
-    </form>
+        
+          <label>Zuglänge [m]</label>
+          <input type="number" id="zl" /><br /><br />
+          <label>Wagenzuggewicht [t]</label>
+          <input type="number" id="gg" /><br /><br />
+          <label>Bremsgewicht [t]</label>
+          <input type="number" id="bg" /><br /><br />
+  
+          <input
+            class="button"
+            type="button"
+            onclick="skyCalculate();"
+            value="Rechnen"
+          /><br><br><br>
+  
+          <div id="sky-result"></div>
+          <br /><br>
+          <div id="sky-result1"></div>
+          <br /><br>
+          <div id="sky-result2"></div>
+          <br /><br>
+          <div id="sky-result3"></div>
+          <br /><br>
+          <div id="sky-result4"></div>
+          <br /><br>
+          <div id="sky-result5"></div>
+          <br /><br><br>
+          <span id="lzb">LZB/PZB Eingaben:</span><br /><br /><br><br>
+          <div id="sky-result6"></div>
+          <br /><br>
+          <div id="sky-result7"></div>
+          <br /><br>
+          <div id="sky-result8"></div>
+          <br />
+        
+      </div>
     <script>
       function skyCalculate() {
         var zl = parseInt(document.getElementById("zl").value);
@@ -92,8 +92,8 @@
         var geszl;
         var brh;
         var gesbg;
-
-
+        var lzbbrh;
+        
         
         zg = 90;
         ll = 18.98;
