@@ -93,8 +93,8 @@ p {
 .message.note {
     background-color: #7bcdc8;
     border-color: #00a99d;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
 }
 
 hr {
