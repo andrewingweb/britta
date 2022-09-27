@@ -108,15 +108,15 @@
           zbg = zg * 0.8;
         }
 
-        //document.getElementById("sky-result").innerHTML = [
-        //  "Bremsgewicht Tfz = " + Math.floor(zbg).toFixed(0) + " t",
-        //];
+        document.getElementById("sky-result").innerHTML = [
+          "Gewicht Tfz = " + zg + " t",
+        ];
 
         if (gg < 800) {
           zbg = zbg * 1;
         }
         if (gg >= 800) {
-          zbg = (zg * 0.8) * 0.75;
+          zbg = zg * 0.8 * 0.75;
         }
         
         document.getElementById("sky-result1").innerHTML = [
@@ -133,13 +133,60 @@
           "Gesamtzuggewicht = " + geszg.toFixed(0) + " t",
         ];
         gesbg = bg + zbg;
-        brh = gesbg * 100 / geszg;
+        brh = (gesbg * 100) / geszg;
 
         document.getElementById("sky-result4").innerHTML = [
           "BrH = " + Math.floor(brh),
         ];
         document.getElementById("sky-result5").innerHTML = [
           "Tfz Länge = " + ll.toFixed(0) + " m",
+        ];
+        if (brh > 0 && brh < 66) {
+          lzbbrh = 50;
+        }
+        if (brh > 66 && brh < 76) {
+          lzbbrh = 70;
+        }
+        if (brh > 76 && brh < 95) {
+          lzbbrh = 80;
+        }
+        if (brh > 95 && brh < 101) {
+          lzbbrh = 80;
+        }
+        if (brh > 101 && brh < 111) {
+          lzbbrh = 100;
+        }
+        if (brh > 111 && brh < 119) {
+          lzbbrh = 120;
+        }
+        if (brh > 119 && brh < 134) {
+          lzbbrh = 120;
+        }
+        if (brh > 134 && brh < 144) {
+          lzbbrh = 130;
+        }
+        if (brh > 144 && brh < 162) {
+          lzbbrh = 140;
+        }
+        var lzbbra;
+
+        if (geszl > ll) {
+          lzbbra = 4;
+        }
+        if (geszl == ll) {
+          lzbbra = 9;
+        }
+
+        document.getElementById("sky-result6").innerHTML = ["BRA = " + lzbbra];
+
+        document.getElementById("sky-result7").innerHTML = [
+          "LZB/PZB BrH = " + lzbbrh,
+        ];
+
+        var lzbzl;
+
+        document.getElementById("sky-result8").innerHTML = [
+          "ZL = " + Math.round(geszl / 10) * 10,
         ];
       }
     </script>
