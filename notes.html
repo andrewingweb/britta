@@ -1,0 +1,36 @@
+if (gg < 800 && zl < 500) {
+    zbg = lbg + gbg + pbg;
+  }
+  if (gg < 800 && zl > 500 && zl < 600) {
+    zbg = lbg + gbg + pbg * 0.95;
+  }
+  if (gg < 800 && zl > 600 && zl < 700) {
+    zbg = lbg + gbg + pbg * 0.9;
+  }
+  if (gg < 800 && zl > 700 && zl < 815) {
+    zbg = lbg + gbg + pbg * 0.81;
+  }
+  if (gg > 800 && gg < 1200 && zl < 500) {
+    zbg = lbg * 0.75 + gbg + pbg;
+  }
+  if (gg > 800 && gg < 1200 && zl > 500 && zl < 600) {
+    zbg = lbg * 0.75 + gbg + pbg * 0.95;
+  }
+  if (gg > 800 && gg < 1200 && zl > 600 && zl < 700) {
+    zbg = lbg * 0.75 + gbg + pbg * 0.9;
+  }
+  if (gg > 800 && gg < 1200 && zl > 600 && zl < 700) {
+    zbg = lbg * 0.75 + gbg + pbg * 0.81;
+  }
+  if (gg > 1200 && zl < 500) {
+    zbg = lbg * 0.75 + gbg * 0.75 + pbg;
+  }
+  if (gg > 1200 && zl > 500 && zl < 600) {
+    zbg = lbg * 0.75 + gbg * 0.75 + pbg * 0.95;
+  }
+  if (gg > 1200 && zl > 600 && zl < 700) {
+    zbg = lbg * 0.75 + gbg * 0.75 + pbg * 0.9;
+  }
+  if (gg > 1200 && zl > 700 && zl < 815) {
+    zbg = (lbg * 0.75 + gbg * 0.75) * 0.95 + pbg * 0.81;
+  }
