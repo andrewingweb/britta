@@ -466,6 +466,7 @@ table th {
 }
 #sos{
     border: 5px solid red;
+    border-radius: 10px;
     color: red;
     font-weight: bold;
     font-size: 2em;
