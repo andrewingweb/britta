@@ -465,12 +465,15 @@ table th {
     line-height: 1;
 }
 #sos{
-    border: 5px solid red;
-    border-radius: 10px;
-    color: red;
-    font-weight: bold;
+    border: 5px solid rgb(250, 247, 247);
+    border-radius: 15px;
+    color: rgb(252, 251, 250);
+    padding: 5px;
     font-size: 2em;
     position: absolute;
     margin-left: 40%;
     
 }
+#sos { 
+    background: linear-gradient(to right top, #f90310, #db3a86); 
+  }
