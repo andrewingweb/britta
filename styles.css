@@ -472,8 +472,5 @@ table th {
     font-size: 2em;
     position: absolute;
     margin-left: 40%;
-    
+    background: linear-gradient(to right top, #f90310, #db3a86);
 }
-#sos { 
-    background: linear-gradient(to right top, #f90310, #db3a86); 
-  }
