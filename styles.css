@@ -87,7 +87,7 @@ p {
 
 .message a:hover {
     border-color: rgba(0, 0, 0, 0.5);
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(237, 10, 10, 0.5);
 }
 
 .message.note {
