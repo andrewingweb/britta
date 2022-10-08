@@ -25,7 +25,7 @@
       <p>Fahrplan in:</p>
 
         <input type="radio" id="R" name="fahrplan" value="1,5" />  
-      <label for="br482">R</label><br />
+      <label for="br482">Triebfahrzeugfahrt</label><br />
        
       <input type="radio" id="P" name="fahrplan" value="1,071428571428571" />
         <label for="br482">P</label><br />
@@ -33,7 +33,7 @@
       <input type="radio" id="G" name="fahrplan" value="0,69047619047619" />
         <label for="br482">G</label><br /><br /><br />
 
-      <label>Zuglänge [m]</label>
+      <label>Wagenzuglänge [m]</label>
       <input type="number" id="zl" /><br /><br />
       <label>Wagenzuggewicht [t]</label>
       <input type="number" id="gg" /><br /><br />
@@ -106,6 +106,12 @@
         glgb = 72;
         ll = 18.9;
 
+        if (checkbox4.checked == true) {
+          zl = 0;
+        }
+        if (checkbox4.checked == true) {
+          gg = 0;
+        }
         if (checkbox4.checked == true) {
           lbg = rlgb;
         }
@@ -185,6 +191,10 @@
 
         brh = (zbg * 100) / geszg;
 
+        
+
+        
+
         document.getElementById("sky-result4").innerHTML = [
           "BrH = " + Math.floor(brh) + " %",
         ];
@@ -219,6 +229,11 @@
         if (brh > 144 && brh < 162) {
           lzbbrh = 140;
         }
+
+        if (checkbox4.checked == true) {
+          lzbbrh = 140;
+        }
+
         var lzbbra;
 
         if (geszl > ll) {
@@ -227,6 +242,11 @@
         if (geszl == ll) {
           lzbbra = 9;
         }
+        
+        if (checkbox4.checked == true) {
+          lzbbra = 9;
+        }
+
 
         document.getElementById("sky-result6").innerHTML = ["BRA = " + lzbbra];
 
@@ -237,6 +257,8 @@
         document.getElementById("sky-result8").innerHTML = [
           "ZL = " + Math.round(geszl / 10) * 10,
         ];
+
+        
 
         var bp;
 
@@ -264,6 +286,12 @@
         if (checkbox6.checked == true) {
           bp = "Alles in G";
         }
+        if (checkbox4.checked == true) {
+          bp = "Lok in R";
+        }
+        
+
+        
         document.getElementById("sky-result11").innerHTML = [
           "Bremsstellungen = " + bp,
         ];
