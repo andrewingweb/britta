@@ -68,6 +68,10 @@
       <br /><br />
       <div id="sky-result8"></div>
       <br />
+      <div id="sky-result11"></div>
+      <br />
+      <div id="sky-result12"></div>
+      <br />
       <!--<div id="sky-result10"></div>
       <br />-->
     </div>
@@ -109,14 +113,11 @@
           lbg = plgb;
         }
         if (checkbox5.checked == true && gg >= 800) {
-          lbg = glgb*0.75;
+          lbg = glgb * 0.75;
         }
         if (checkbox6.checked == true) {
           lbg = glgb;
         }
-
-        
-
 
         document.getElementById("sky-result").innerHTML = [
           "Gewicht Tfz = " + lg + " t",
@@ -138,51 +139,49 @@
           "Gesamtzuggewicht = " + geszg.toFixed(0) + " t",
         ];
         var zbg;
-        
+
         if (gg < 800 && zl < 500) {
           zbg = lbg + gbg + pbg;
         }
         if (gg < 800 && zl >= 500 && zl < 600) {
-          zbg = lbg + gbg + (pbg * 0.95);
+          zbg = lbg + gbg + pbg * 0.95;
         }
         if (gg < 800 && zl >= 600 && zl < 700) {
-          zbg = lbg + gbg + (pbg * 0.9);
+          zbg = lbg + gbg + pbg * 0.9;
         }
         if (gg < 800 && zl >= 700 && zl < 815) {
-          zbg = lbg + gbg + (pbg * 0.81);
+          zbg = lbg + gbg + pbg * 0.81;
         }
         if (gg >= 800 && gg < 1200 && zl < 500) {
           zbg = lbg + gbg + pbg;
         }
         if (gg >= 800 && gg < 1200 && zl >= 500 && zl < 600) {
-          zbg = lbg + gbg + (pbg * 0.95);
+          zbg = lbg + gbg + pbg * 0.95;
         }
         if (gg >= 800 && gg < 1200 && zl >= 600 && zl < 700) {
-          zbg = lbg + gbg + (pbg * 0.9);
+          zbg = lbg + gbg + pbg * 0.9;
         }
         if (gg >= 800 && gg < 1200 && zl >= 700 && zl < 815) {
-          zbg = lbg + gbg + (pbg * 0.81);
+          zbg = lbg + gbg + pbg * 0.81;
         }
         if (gg >= 1200 && zl < 500) {
-          zbg = lbg + (gbg * 0.75) + pbg;
+          zbg = lbg + gbg * 0.75 + pbg;
         }
         if (gg >= 1200 && zl >= 500 && zl < 600) {
-          zbg = lbg + (gbg * 0.75) + (pbg * 0.95);
+          zbg = lbg + gbg * 0.75 + pbg * 0.95;
         }
         if (gg >= 1200 && zl >= 600 && zl < 700) {
-          zbg = lbg + (gbg * 0.75) + (pbg * 0.9);
+          zbg = lbg + gbg * 0.75 + pbg * 0.9;
         }
         if (gg >= 1200 && zl >= 700 && zl < 815) {
-          zbg = ((lbg + (gbg * 0.75)) * 0.95) + (pbg * 0.81);
+          zbg = (lbg + gbg * 0.75) * 0.95 + pbg * 0.81;
         }
-        
+
         //zbg = lbg + gbg + pbg;
 
         //document.getElementById("sky-result10").innerHTML = [
         //  "zbg = " + zbg + " t",
         //];
-
-        
 
         brh = (zbg * 100) / geszg;
 
@@ -231,20 +230,44 @@
 
         document.getElementById("sky-result6").innerHTML = ["BRA = " + lzbbra];
 
-        document.getElementById("sky-result7").innerHTML = [
-          "BrH = " + lzbbrh,
-        ];
+        document.getElementById("sky-result7").innerHTML = ["BrH = " + lzbbrh];
 
         var lzbzl;
 
         document.getElementById("sky-result8").innerHTML = [
           "ZL = " + Math.round(geszl / 10) * 10,
         ];
-        
+
+        var bp;
+
+        if (checkbox5.checked == true && gg < 800) {
+          bp = "Alles in P";
+        }
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
+
+        if (checkbox5.checked == true && gg >= 800 && gg < 1200) {
+          bp = "Lok in G, Rest in P";
+        }
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
+
+        if (checkbox5.checked == true && gg >= 1200) {
+          bp = "Lok + Erste 5 Wagons in G, Rest in P";
+        }
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
+
+        if (checkbox6.checked == true) {
+          bp = "Alles in G";
+        }
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
       }
-
-
-        
     </script>
   </body>
 </html>
