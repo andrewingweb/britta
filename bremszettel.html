@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bremszettel 91278</title>
     <style type="text/css">
+        
       .tg {
         border-collapse: collapse;
         border-spacing: 0;
@@ -73,7 +74,8 @@
        
       <input type="radio" id="G" name="fahrplan" value="0,69047619047619" />
         <label for="br482">G</label><br /><br /><br />
-
+      <label>Mindestbremshundertstel</label>
+      <input type="number" id="mbrh" /><br /><br /><hr><br>
       <label>Wagenzuglänge [m]</label>
       <input type="number" id="zl" /><br /><br />
       <label>Wagenzuggewicht [t]</label>
@@ -82,6 +84,17 @@
       <input type="number" id="gbg" /><br /><br />
       <label>P Bremsgewicht [t]</label>
       <input type="number" id="pbg" /><br /><br />
+      <label>Zahl der Achsen</label>
+      <input type="number" id="axels" /><br /><br />
+      <label>Nummer des letzten Fahrzeuges</label>
+      <input type="number" id="fn" /><br /><br />
+      <p>Zulässige Geschwindigkeit ist niedriger<br />als die des Zuges gemäß
+        Fahrplanangaben</p>
+      <label>Wagenzug</label>
+      <input type="number" id="kwz"/> km/h *)<br /><br />
+      <label>arbeitende Tfz</label>
+      <input type="number" id="ml"/> km/h *)<br /><br />
+      
 
       <input
         class="button"
@@ -101,8 +114,8 @@
       <div id="sky-result4"></div>
       <br /><br />
       <div id="sky-result5"></div>
-      <br /><br /><br />
-      <span id="lzb">LZB/PZB Eingaben:</span><br /><br /><br /><br />
+      <br /><br />
+      <span id="lzb" style="font-weight: bold">LZB/PZB Eingaben:</span><br /><br /><br />
       <div id="sky-result6"></div>
       <br /><br />
       <div id="sky-result7"></div>
@@ -176,16 +189,16 @@
         <tr>
           <td class="tg-c3ow">3</td>
           <td class="tg-0pky">Zahl der Achsen</td>
-          <td class="tg-c3ow"></td>
-          <td class="tg-c3ow"></td>
-          <td class="tg-c3ow"></td>
+          <td class="tg-c3ow" id="sky-resultaz"></td>
+          <td class="tg-c3ow" id="sky-resultazl"></td>
+          <td class="tg-c3ow" id="sky-resultgaz"></td>
         </tr>
         <tr>
           <td class="tg-c3ow">4</td>
           <td class="tg-0pky">Mindestbremshundertstel</td>
           <td class="tg-0pky" rowspan="3"></td>
           <td class="tg-0pky" rowspan="3"></td>
-          <td class="tg-c3ow"></td>
+          <td class="tg-c3ow" id="sky-resultmbrh"></td>
         </tr>
         <tr>
           <td class="tg-c3ow">5</td>
@@ -204,33 +217,33 @@
         <tr>
           <td class="tg-c3ow">7</td>
           <td class="tg-0pky">Nummer des letzten Fahrzeuges</td>
-          <td class="tg-0pky" colspan="3"></td>
+          <td class="tg-0pky" colspan="3" id="sky-resultfn"></td>
         </tr>
         <tr>
           <td class="tg-c3ow">8</td>
           <td class="tg-0pky">Zahl der einlösigen Bremsen</td>
-          <td class="tg-0pky"></td>
+          <td class="tg-0pky"><input type="number" id="eb" style="width: 50px"/></td>
           <td class="tg-0pky" colspan="2" rowspan="5"></td>
         </tr>
         <tr>
           <td class="tg-c3ow">9</td>
           <td class="tg-0pky">Zahl der mehrlösigen Bremsen</td>
-          <td class="tg-0pky"></td>
+          <td class="tg-0pky"><input type="number" id="mb" style="width: 50px"/></td>
         </tr>
         <tr>
           <td class="tg-c3ow">10</td>
           <td class="tg-0pky">Zahl der Bremsen mit D</td>
-          <td class="tg-0pky"></td>
+          <td class="tg-0pky"><input type="number" id="db" style="width: 50px"/></td>
         </tr>
         <tr>
           <td class="tg-c3ow">11</td>
           <td class="tg-0pky">Zahl der Bremsen mit K, L und LL</td>
-          <td class="tg-0pky"></td>
+          <td class="tg-0pky"><input type="number" id="klllb" style="width: 50px"/></td>
         </tr>
         <tr>
           <td class="tg-c3ow">12</td>
           <td class="tg-0pky">Zahl der Matrossow-Bremsen</td>
-          <td class="tg-0pky"></td>
+          <td class="tg-0pky"><input type="number" id="mb" style="width: 50px"/></td>
         </tr>
         <tr>
           <td class="tg-c3ow">13</td>
@@ -261,15 +274,15 @@
             Zulässige Geschwindigkeit ist niedriger<br />als die des Zuges gemäß
             Fahrplanangaben
           </td>
-          <td class="tg-c3ow">nein / ja<br /><br />......km/h *)</td>
-          <td class="tg-c3ow">
-            nein / ja<br /><br /><span
+          <td class="tg-c3ow" id="sky-resultkwz">nein<br /><br />.....km/h*)</td>
+          <td class="tg-c3ow" id="sky-resultml">
+            nein<br /><br /><span
               style="font-weight: 400; font-style: normal"
-              >......km/h *)</span
+              >.....km/h*)</span
             >
           </td>
           <td class="tg-c3ow">
-            nein / ja<br /><br /><span
+            nein<br /><br /><span
               style="font-weight: 400; font-style: normal"
               >......km/h *)</span
             >
@@ -281,13 +294,29 @@
           <td class="tg-0pky">
             NBÜ/ep-Bremsen an allen Fahrzeugen im Wagenzug<br />vorhanden
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio1">
+            <input type="radio" name="choice-radio1">
+            </span>
+          </td>
           <td class="tg-0pky" colspan="2" rowspan="11"></td>
         </tr>
         <tr>
           <td class="tg-c3ow">22</td>
           <td class="tg-0pky">Notbremsüberbrückung wirksam</td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio2">
+            <input type="radio" name="choice-radio2">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">23</td>
@@ -299,7 +328,15 @@
             ><span style="font-weight: normal">oder </span
             ><span style="font-weight: bold">ee</span>
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio3">
+            <input type="radio" name="choice-radio3">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">24</td>
@@ -308,7 +345,15 @@
             ><span style="font-weight: normal">oder </span
             ><span style="font-weight: bold">y</span>
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio4">
+            <input type="radio" name="choice-radio4">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">25</td>
@@ -316,12 +361,28 @@
             "<span style="font-weight: bold">TB 0</span
             ><span style="font-weight: normal">"</span>
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio5">
+            <input type="radio" name="choice-radio5">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">26</td>
           <td class="tg-dvpl">....................................</td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio6">
+            <input type="radio" name="choice-radio6">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">27</td>
@@ -331,7 +392,15 @@
               >a</span
             >
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio7">
+            <input type="radio" name="choice-radio7">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">28</td>
@@ -339,12 +408,28 @@
             <span style="font-weight: bold">"o. Zub</span
             ><span style="font-weight: normal">"</span>
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio8">
+            <input type="radio" name="choice-radio8">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">29</td>
           <td class="tg-dvpl">.....................................</td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio9">
+            <input type="radio" name="choice-radio9">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-0pky" rowspan="2">Angaben für<br />Güterzüge</td>
@@ -352,14 +437,30 @@
           <td class="tg-0pky">
             Im Wagenzug sind Fahrzeuge mit gefährlichen Gütern
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio10">
+            <input type="radio" name="choice-radio10">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-c3ow">32</td>
           <td class="tg-dvpl">
             ......................................................................................
           </td>
-          <td class="tg-c3ow">nein / ja</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio11">
+            <input type="radio" name="choice-radio11">
+            </span>
+          </td>
         </tr>
         <tr>
           <td class="tg-0pky" colspan="2">
@@ -372,6 +473,7 @@
         </tr>
       </tbody>
     </table>
+    <p>VBRW.4312V01 Bremszettel A5 Bk100 5b-70 10.17</p>
     <script>
       n = new Date();
       y = n.getFullYear();
@@ -385,6 +487,11 @@
         var gg = parseInt(document.getElementById("gg").value);
         var gbg = parseInt(document.getElementById("gbg").value);
         var pbg = parseInt(document.getElementById("pbg").value);
+        var az = parseInt(document.getElementById("axels").value);
+        var mbrh = parseInt(document.getElementById("mbrh").value);
+        var fn = parseInt(document.getElementById("fn").value);
+        var kwz = parseInt(document.getElementById("kwz").value);
+        var ml = parseInt(document.getElementById("ml").value);
 
         var checkbox4 = document.getElementById("R");
         var checkbox5 = document.getElementById("P");
@@ -403,12 +510,14 @@
         var lzbbrh;
         var zbg;
         var brh;
+        var gaz;
 
         lg = 84;
         rlgb = 126;
         plgb = 89;
         glgb = 72;
         ll = 18.9;
+        azl = 4;
 
         if (checkbox4.checked == true) {
           zl = 0;
@@ -438,7 +547,29 @@
         document.getElementById("sky-resulta").innerHTML = [
           gg.toFixed(0),
         ];
+        document.getElementById("sky-resultaz").innerHTML = [
+          az,
+        ];
+        document.getElementById("sky-resultazl").innerHTML = [
+          azl,
+        ];
+        gaz = azl + az;
+        document.getElementById("sky-resultgaz").innerHTML = [
+          gaz,
+        ];
+        document.getElementById("sky-resultmbrh").innerHTML = [
+          mbrh + "%",
+        ];
+        document.getElementById("sky-resultfn").innerHTML = [
+          fn,
+        ];
         
+        document.getElementById("sky-resultkwz").innerHTML = [
+          kwz,
+        ];
+        document.getElementById("sky-resultml").innerHTML = [
+          ml,
+        ];
 
         document.getElementById("sky-result1").innerHTML = [
           "Bremsgewicht Tfz = " + lbg + " t",
@@ -625,9 +756,15 @@
           "Bremsstellungen = " + bp,
         ];
       }
+
+
+      
+      
       document.getElementById("sky-result20").innerHTML = [
           geszl.toFixed(0),
         ];
+
+
     </script>
   </body>
 </html>
