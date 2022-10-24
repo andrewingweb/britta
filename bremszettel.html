@@ -88,13 +88,13 @@
       <input type="number" id="axels" /><br /><br />
       <label>Nummer des letzten Fahrzeuges</label>
       <input type="number" id="fn" /><br /><br />
-      <p>Zulässige Geschwindigkeit ist niedriger<br />als die des Zuges gemäß
+      <!--<p>Zulässige Geschwindigkeit ist niedriger<br />als die des Zuges gemäß
         Fahrplanangaben</p>
       <label>Wagenzug</label>
-      <input type="number" id="kwz"/> km/h *)<br /><br />
+      <input type="number" id=""/> km/h *)<br /><br />
       <label>arbeitende Tfz</label>
-      <input type="number" id="ml"/> km/h *)<br /><br />
-      
+      <input type="number" id=""/> km/h *)<br /><br />
+      -->
 
       <input
         class="button"
@@ -275,8 +275,8 @@
             Zulässige Geschwindigkeit ist niedriger<br />als die des Zuges gemäß
             Fahrplanangaben
           </td>
-          <td class="tg-c3ow" id="sky-resultkwz">nein<br /><br />.....km/h*)</td>
-          <td class="tg-c3ow" id="sky-resultml">
+          <td class="tg-c3ow" id="">nein<br /><br />.....km/h*)</td>
+          <td class="tg-c3ow" id="">
             nein<br /><br /><span
               style="font-weight: 400; font-style: normal"
               >.....km/h*)</span
@@ -491,8 +491,8 @@
         var az = parseInt(document.getElementById("axels").value);
         var mbrh = parseInt(document.getElementById("mbrh").value);
         var fn = parseInt(document.getElementById("fn").value);
-        var kwz = parseInt(document.getElementById("kwz").value);
-        var ml = parseInt(document.getElementById("ml").value);
+        //var kwz = parseInt(document.getElementById("kwz").value);
+        //var ml = parseInt(document.getElementById("ml").value);
 
         var checkbox4 = document.getElementById("R");
         var checkbox5 = document.getElementById("P");
@@ -565,12 +565,12 @@
           fn,
         ];
         
-        document.getElementById("sky-resultkwz").innerHTML = [
-          kwz,
-        ];
-        document.getElementById("sky-resultml").innerHTML = [
-          ml,
-        ];
+       // document.getElementById("sky-resultkwz").innerHTML = [
+       //   kwz,
+       // ];
+     //   document.getElementById("sky-resultml").innerHTML = [
+     //     ml,
+     //   ];
 
         document.getElementById("sky-result1").innerHTML = [
           "Bremsgewicht Tfz = " + lbg + " t",
