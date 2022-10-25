@@ -1,7 +1,7 @@
 html {
     
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 a {
     text-decoration: none;
@@ -362,7 +362,7 @@ table th {
 }
 button {
     margin: 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-decoration: none;
   
     color: rgb(2, 2, 2);
