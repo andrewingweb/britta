@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bremszettel 91274</title>
+    <style type="text/css">
+        
+      .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top;
+      }
+      .tg .tg-0pky {
+        border-color: inherit;
+        text-align: left;
+        vertical-align: top;
+      }
+      .tg .tg-dvpl {
+        border-color: inherit;
+        text-align: right;
+        vertical-align: top;
+      }
+      #sky-result44 {
+        text-align: center;
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+    </style>
+    <style>
+      body {
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message">
+      <h2>Baureihe 482</h2>
+
+      <p>Fahrplan in:</p>
+
+        <input type="radio" id="R" name="fahrplan" value="1,5" />  
+      <label for="br482">Triebfahrzeugfahrt</label><br />
+       
+      <input type="radio" id="P" name="fahrplan" value="1,071428571428571" />
+        <label for="br482">P</label><br />
+       
+      <input type="radio" id="G" name="fahrplan" value="0,69047619047619" />
+        <label for="br482">G</label><br /><br /><br />
+      <label>Mindestbremshundertstel</label>
+      <input type="number" id="mbrh" /><br /><br /><hr><br>
+      <label>Wagenzuglänge [m]</label>
+      <input type="number" id="zl" /><br /><br />
+      <label>Wagenzuggewicht [t]</label>
+      <input type="number" id="gg" /><br /><br />
+      <label>G Bremsgewicht [t]</label>
+      <input type="number" id="gbg" /><br /><br />
+      <label>P Bremsgewicht [t]</label>
+      <input type="number" id="pbg" /><br /><br />
+      <label>Zahl der Achsen</label>
+      <input type="number" id="axels" /><br /><br />
+      <label>Nummer des letzten Fahrzeuges</label>
+      <input type="number" id="fn" /><br /><br />
+      <!--<p>Zulässige Geschwindigkeit ist niedriger<br />als die des Zuges gemäß
+        Fahrplanangaben</p>
+      <label>Wagenzug</label>
+      <input type="number" id=""/> km/h *)<br /><br />
+      <label>arbeitende Tfz</label>
+      <input type="number" id=""/> km/h *)<br /><br />
+      -->
+
+      <input
+        class="button"
+        type="button"
+        onclick="skyCalculate();"
+        value="Rechnen"
+      /><br><br><br>
+
+      <div id="sky-result"></div>
+      <br><br>
+      <div id="sky-result1"></div>
+      <br><br>
+      <div id="sky-result2"></div>
+      <br><br>
+      <div id="sky-result3"></div>
+      <br><br>
+      <div id="sky-result4"></div>
+      <br><br>
+      <div id="sky-result5"></div>
+      <br><br><br>
+      <span id="lzb" style="font-weight: bold">LZB/PZB Eingaben:</span><br /><br /><br />
+      <div id="sky-result6"></div>
+      <br /><br />
+      <div id="sky-result7"></div>
+      <br /><br />
+      <div id="sky-result8"></div>
+      <br />
+      <div id="sky-result11"></div>
+      <br />
+      <div id="sky-result12"></div>
+      <br /><br><br><br><br><br><br><br><br><br><br>
+      
+      <!--<div id="sky-result10"></div>
+    <br />-->
+    </div>
+    <div id="sky-result22"></div>
+    <hr />
+    <p style="display: inline">
+      <span style="font-weight: bold; font-size: 1.5rem">Bremszettel</span
+      ><span style="margin-left: 190px">Datum:</span
+      ><span id="date" style="margin-left: 20px"></span>
+    </p>
+    <hr />
+    <hr />
+    <p style="display: inline">
+      <span style="margin-left: 90px">Zugnummer</span
+      ><span style="margin-left: 150px">ab Betriebsstelle</span>
+    </p>
+    <hr />
+    <p style="display: inline">
+      <span style="margin-left: 105px">91274</span
+      ><span style="margin-left: 210px">FO G</span>
+    </p>
+    <hr />
+    
+    
+    <table class="tg">
+      <thead>
+        <tr>
+          <th class="tg-c3ow">1</th>
+          <th class="tg-c3ow">2</th>
+          <th class="tg-c3ow">3</th>
+          <th class="tg-c3ow">4</th>
+          <th class="tg-c3ow">5</th>
+          <th class="tg-c3ow">6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-0pky" rowspan="17">
+            Angaben für<br />Reise- und<br />Güterzuge<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          </td>
+          <td class="tg-c3ow">Zeile</td>
+          <td class="tg-c3ow">Bezeichnung</td>
+          <td class="tg-0pky">Wagenzug</td>
+          <td class="tg-c3ow">arbeitende<br />Trieb-<br />fahrzeuge</td>
+          <td class="tg-c3ow">Gesamtzug</td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">1</td>
+          <td class="tg-0pky">Gewicht [t]</td>
+          <td class="tg-c3ow" id="sky-resulta"></td>
+          <td class="tg-c3ow" id="sky-result0"></td>
+          <td class="tg-c3ow" id="sky-result33"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">2</td>
+          <td class="tg-0pky">Bremsgewicht [t]</td>
+          <td class="tg-c3ow" id="sky-result114"></td>
+          <td class="tg-c3ow" id="sky-result113"></td>
+          <td class="tg-c3ow" id="sky-result112"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">3</td>
+          <td class="tg-0pky">Zahl der Achsen</td>
+          <td class="tg-c3ow" id="sky-resultaz"></td>
+          <td class="tg-c3ow" id="sky-resultazl"></td>
+          <td class="tg-c3ow" id="sky-resultgaz"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">4</td>
+          <td class="tg-0pky">Mindestbremshundertstel</td>
+          <td class="tg-0pky" rowspan="3"></td>
+          <td class="tg-0pky" rowspan="3"></td>
+          <td class="tg-c3ow" id="sky-resultmbrh"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">5</td>
+          <td class="tg-0pky">
+            Vorhandene
+            <span style="text-decoration: underline">Zeile 2, Sp. 6 x 100</span
+            ><br />Bremshundertstel Zeile 1, Sp. 6
+          </td>
+          <td class="tg-9wq8" id="sky-result44"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">6</td>
+          <td class="tg-0pky">Fehlende Bremshundertstel</td>
+          <td class="tg-dvpl">*)</td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">7</td>
+          <td class="tg-0pky">Nummer des letzten Fahrzeuges</td>
+          <td class="tg-0pky" colspan="3" id="sky-resultfn"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">8</td>
+          <td class="tg-0pky">Zahl der einlösigen Bremsen</td>
+          <td class="tg-0pky"><input type="number" id="eb" style="width: 50px"/></td>
+          <td class="tg-0pky" colspan="2" rowspan="5"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">9</td>
+          <td class="tg-0pky">Zahl der mehrlösigen Bremsen</td>
+          <td class="tg-0pky"><input type="number" id="mb" style="width: 50px"/></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">10</td>
+          <td class="tg-0pky">Zahl der Bremsen mit D</td>
+          <td class="tg-0pky"><input type="number" id="db" style="width: 50px"/></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">11</td>
+          <td class="tg-0pky">Zahl der Bremsen mit K, L und LL</td>
+          <td class="tg-0pky"><input type="number" id="klllb" style="width: 50px"/></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">12</td>
+          <td class="tg-0pky">Zahl der Matrossow-Bremsen</td>
+          <td class="tg-0pky"><input type="number" id="mb" style="width: 50px"/></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">13</td>
+          <td class="tg-0pky">Länge [m]</td>
+          <td class="tg-c3ow" id="sky-result56"></td>
+          <td class="tg-c3ow" id="sky-result55"></td>
+          <td class="tg-c3ow" id="sky-result57"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">14</td>
+          <td class="tg-0pky">Zahl der gebremsten Achsen</td>
+          <td class="tg-0pky"></td>
+          <td class="tg-0pky" colspan="2" rowspan="2"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">15</td>
+          <td class="tg-0pky">
+            Zahl der erforderlich
+            <span style="text-decoration: underline"> Zeile 3, Sp. 4 x 9</span
+            ><span style="text-decoration: none">&nbsp;&nbsp;</span
+            ><br />gebremsten Achsen. 10
+          </td>
+          <td class="tg-0pky"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">16</td>
+          <td class="tg-0pky">
+            Zulässige Geschwindigkeit ist niedriger<br />als die des Zuges gemäß
+            Fahrplanangaben
+          </td>
+          <td class="tg-c3ow" id="">nein<br /><br />.....km/h*)</td>
+          <td class="tg-c3ow" id="">
+            nein<br /><br /><span
+              style="font-weight: 400; font-style: normal"
+              >.....km/h*)</span
+            >
+          </td>
+          <td class="tg-c3ow">
+            nein<br /><br /><span
+              style="font-weight: 400; font-style: normal"
+              >......km/h *)</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-0pky" rowspan="9">Angaben für<br />Reisezüge</td>
+          <td class="tg-c3ow">21</td>
+          <td class="tg-0pky">
+            NBÜ/ep-Bremsen an allen Fahrzeugen im Wagenzug<br />vorhanden
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio1">
+            <input type="radio" name="choice-radio1">
+            </span>
+          </td>
+          <td class="tg-0pky" colspan="2" rowspan="11"></td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">22</td>
+          <td class="tg-0pky">Notbremsüberbrückung wirksam</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio2">
+            <input type="radio" name="choice-radio2">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">23</td>
+          <td class="tg-0pky">
+            Im Wagenzug sind Fahrzeuge
+            mit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="font-weight: bold"
+              >h, z </span
+            ><span style="font-weight: normal">oder </span
+            ><span style="font-weight: bold">ee</span>
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio3">
+            <input type="radio" name="choice-radio3">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">24</td>
+          <td class="tg-dvpl">
+            <span style="font-weight: bold">n </span
+            ><span style="font-weight: normal">oder </span
+            ><span style="font-weight: bold">y</span>
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio4">
+            <input type="radio" name="choice-radio4">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">25</td>
+          <td class="tg-dvpl">
+            "<span style="font-weight: bold">TB 0</span
+            ><span style="font-weight: normal">"</span>
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio5">
+            <input type="radio" name="choice-radio5">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">26</td>
+          <td class="tg-dvpl">....................................</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio6">
+            <input type="radio" name="choice-radio6">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">27</td>
+          <td class="tg-0pky">
+            Im Wagenzug sind ausschließlich Fahrzeuge
+            mit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold"
+              >a</span
+            >
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio7">
+            <input type="radio" name="choice-radio7">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">28</td>
+          <td class="tg-dvpl">
+            <span style="font-weight: bold">"o. Zub</span
+            ><span style="font-weight: normal">"</span>
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio8">
+            <input type="radio" name="choice-radio8">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">29</td>
+          <td class="tg-dvpl">.....................................</td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio9">
+            <input type="radio" name="choice-radio9">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-0pky" rowspan="2">Angaben für<br />Güterzüge</td>
+          <td class="tg-c3ow">31</td>
+          <td class="tg-0pky">
+            Im Wagenzug sind Fahrzeuge mit gefährlichen Gütern
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio10">
+            <input type="radio" name="choice-radio10">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">32</td>
+          <td class="tg-dvpl">
+            ......................................................................................
+          </td>
+          <td class="tg-c3ow" style="display: inline; border: none; font-size: 16px">
+            <span>
+                <label>nein </label>/<label> ja</label>
+            </span>
+           <span style="display: inline">
+            <input type="radio" name="choice-radio11">
+            <input type="radio" name="choice-radio11">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tg-0pky" colspan="2">
+            Bremszettel ausgefertigt<br />(Name)
+          </td>
+          <td class="tg-c3ow">Ingham</td>
+          <td class="tg-0pky" colspan="3">
+            *) betriebsleitende Stelle des EIU<br />&nbsp;&nbsp;&nbsp;&nbsp;verständigen
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>VBRW.4312V01 Bremszettel A5 Bk100 5b-70 10.17</p>
+    <script>
+      n = new Date();
+      y = n.getFullYear();
+      m = n.getMonth() + 1;
+      d = n.getDate();
+      document.getElementById("date").innerHTML = d + "." + m + "." + y;
+    </script>
+    <script>
+      function skyCalculate() {
+        var zl = parseInt(document.getElementById("zl").value);
+        var gg = parseInt(document.getElementById("gg").value);
+        var gbg = parseInt(document.getElementById("gbg").value);
+        var pbg = parseInt(document.getElementById("pbg").value);
+        var az = parseInt(document.getElementById("axels").value);
+        var mbrh = parseInt(document.getElementById("mbrh").value);
+        var fn = parseInt(document.getElementById("fn").value);
+        //var kwz = parseInt(document.getElementById("kwz").value);
+        //var ml = parseInt(document.getElementById("ml").value);
+
+        var checkbox4 = document.getElementById("R");
+        var checkbox5 = document.getElementById("P");
+        var checkbox6 = document.getElementById("G");
+        var lg;
+        var rlbg;
+        var plbg;
+        var glbg;
+        var lbg;
+        var zbgmin;
+        var ll;
+        var geszg;
+        var geszl;
+        var brh;
+        var gesbg;
+        var lzbbrh;
+        var zbg;
+        var brh;
+        var gaz;
+
+        lg = 84;
+        rlgb = 126;
+        plgb = 89;
+        glgb = 72;
+        ll = 18.9;
+        azl = 4;
+
+        if (checkbox4.checked == true) {
+          zl = 0;
+        }
+        if (checkbox4.checked == true) {
+          gg = 0;
+        }
+        if (checkbox4.checked == true) {
+          lbg = rlgb;
+        }
+        if (checkbox5.checked == true && gg < 800) {
+          lbg = plgb;
+        }
+        if (checkbox5.checked == true && gg >= 800) {
+          lbg = glgb * 0.75;
+        }
+        if (checkbox6.checked == true) {
+          lbg = glgb;
+        }
+
+        document.getElementById("sky-result").innerHTML = [
+          "Gewicht Tfz = " + lg + " t",
+        ];
+        document.getElementById("sky-result0").innerHTML = [
+          lg,
+        ];
+        document.getElementById("sky-resulta").innerHTML = [
+          gg.toFixed(0),
+        ];
+        document.getElementById("sky-resultaz").innerHTML = [
+          az,
+        ];
+        document.getElementById("sky-resultazl").innerHTML = [
+          azl,
+        ];
+        gaz = azl + az;
+        document.getElementById("sky-resultgaz").innerHTML = [
+          gaz,
+        ];
+        document.getElementById("sky-resultmbrh").innerHTML = [
+          mbrh + "%",
+        ];
+        document.getElementById("sky-resultfn").innerHTML = [
+          fn,
+        ];
+        
+       // document.getElementById("sky-resultkwz").innerHTML = [
+       //   kwz,
+       // ];
+     //   document.getElementById("sky-resultml").innerHTML = [
+     //     ml,
+     //   ];
+
+        document.getElementById("sky-result1").innerHTML = [
+          "Bremsgewicht Tfz = " + lbg + " t",
+        ];
+        
+        document.getElementById("sky-result113").innerHTML = [
+          lbg,
+        ];
+
+        geszl = ll + zl;
+
+        document.getElementById("sky-result2").innerHTML = [
+          "Gesamtzuglänge = " + geszl.toFixed(0) + " m",
+        ];
+        document.getElementById("sky-result57").innerHTML = [
+          geszl.toFixed(0),
+        ];
+        
+
+        geszg = lg + gg;
+
+        document.getElementById("sky-result3").innerHTML = [
+          "Gesamtzuggewicht = " + geszg.toFixed(0) + " t",
+        ];
+        document.getElementById("sky-result33").innerHTML = [
+          geszg.toFixed(0),
+        ];
+        var zbg;
+
+        if (gg < 800 && zl < 500) {
+          zbg = lbg + gbg + pbg;
+        }
+        if (gg < 800 && zl >= 500 && zl < 600) {
+          zbg = lbg + gbg + pbg * 0.95;
+        }
+        if (gg < 800 && zl >= 600 && zl < 700) {
+          zbg = lbg + gbg + pbg * 0.9;
+        }
+        if (gg < 800 && zl >= 700 && zl < 815) {
+          zbg = lbg + gbg + pbg * 0.81;
+        }
+        if (gg >= 800 && gg < 1200 && zl < 500) {
+          zbg = lbg + gbg + pbg;
+        }
+        if (gg >= 800 && gg < 1200 && zl >= 500 && zl < 600) {
+          zbg = lbg + gbg + pbg * 0.95;
+        }
+        if (gg >= 800 && gg < 1200 && zl >= 600 && zl < 700) {
+          zbg = lbg + gbg + pbg * 0.9;
+        }
+        if (gg >= 800 && gg < 1200 && zl >= 700 && zl < 815) {
+          zbg = lbg + gbg + pbg * 0.81;
+        }
+        if (gg >= 1200 && zl < 500) {
+          zbg = lbg + gbg * 0.75 + pbg;
+        }
+        if (gg >= 1200 && zl >= 500 && zl < 600) {
+          zbg = lbg + gbg * 0.75 + pbg * 0.95;
+        }
+        if (gg >= 1200 && zl >= 600 && zl < 700) {
+          zbg = lbg + gbg * 0.75 + pbg * 0.9;
+        }
+        if (gg >= 1200 && zl >= 700 && zl < 815) {
+          zbg = (lbg + gbg * 0.75) * 0.95 + pbg * 0.81;
+        }
+        document.getElementById("sky-result114").innerHTML = [
+          (pbg + gbg),
+        ];
+        //zbg = lbg + gbg + pbg;
+
+        //document.getElementById("sky-result10").innerHTML = [
+        //  "zbg = " + zbg + " t",
+        //];
+
+        brh = (zbg * 100) / geszg;
+
+        document.getElementById("sky-result4").innerHTML = [
+          "BrH = " + Math.floor(brh) + " %",
+        ];
+        document.getElementById("sky-result44").innerHTML = [
+          Math.floor(brh) + " %",
+        ];
+        document.getElementById("sky-result5").innerHTML = [
+          "Tfz Länge = " + ll.toFixed(0) + " m",
+        ];
+        document.getElementById("sky-result55").innerHTML = [
+          ll.toFixed(0),
+        ];
+        document.getElementById("sky-result56").innerHTML = [
+          zl.toFixed(0),
+        ];
+        
+
+        if (brh > 0 && brh < 66) {
+          lzbbrh = 50;
+        }
+        if (brh > 66 && brh < 76) {
+          lzbbrh = 70;
+        }
+        if (brh > 76 && brh < 95) {
+          lzbbrh = 80;
+        }
+        if (brh > 95 && brh < 101) {
+          lzbbrh = 80;
+        }
+        if (brh > 101 && brh < 111) {
+          lzbbrh = 100;
+        }
+        if (brh > 111 && brh < 119) {
+          lzbbrh = 120;
+        }
+        if (brh > 119 && brh < 134) {
+          lzbbrh = 120;
+        }
+        if (brh > 134 && brh < 144) {
+          lzbbrh = 130;
+        }
+        if (brh > 144 && brh < 162) {
+          lzbbrh = 140;
+        }
+
+        if (checkbox4.checked == true) {
+          lzbbrh = 140;
+        }
+
+        var lzbbra;
+
+        if (geszl > ll) {
+          lzbbra = 4;
+        }
+        if (geszl == ll) {
+          lzbbra = 9;
+        }
+
+        if (checkbox4.checked == true) {
+          lzbbra = 9;
+        }
+        document.getElementById("sky-result112").innerHTML = [
+          zbg,
+        ];
+        
+
+        document.getElementById("sky-result6").innerHTML = ["BRA = " + lzbbra];
+
+        document.getElementById("sky-result7").innerHTML = ["BrH = " + lzbbrh];
+
+        var lzbzl;
+
+        document.getElementById("sky-result8").innerHTML = [
+          "ZL = " + Math.ceil(geszl / 10) * 10,
+        ];
+
+        var bp;
+
+        if (checkbox5.checked == true && gg < 800) {
+          bp = "Alles in P";
+        }
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
+
+        if (checkbox5.checked == true && gg >= 800 && gg < 1200) {
+          bp = "Lok in G, Rest in P";
+        }
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
+
+        if (checkbox5.checked == true && gg >= 1200) {
+          bp = "Lok + Erste 5 Wagons in G, Rest in P";
+        }
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
+
+        if (checkbox6.checked == true) {
+          bp = "Alles in G";
+        }
+        if (checkbox4.checked == true) {
+          bp = "Lok in R";
+        }
+
+        document.getElementById("sky-result11").innerHTML = [
+          "Bremsstellungen = " + bp,
+        ];
+      }
+
+
+      
+      
+      document.getElementById("sky-result20").innerHTML = [
+          geszl.toFixed(0),
+        ];
+
+
+    </script>
+  </body>
+</html>
