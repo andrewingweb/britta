@@ -361,8 +361,8 @@ table th {
     background: linear-gradient(to right top, #f90310, #db3a86);
 }
 button {
-    margin: 2px;
-    font-size: 1.5rem;
+    margin: 5px;
+    font-size: 3rem;
     text-decoration: none;
   
     color: rgb(2, 2, 2);
