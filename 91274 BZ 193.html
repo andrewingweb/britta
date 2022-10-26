@@ -649,6 +649,16 @@
         document.getElementById("sky-result44").innerHTML = [
           Math.floor(brh) + " %",
         ];
+
+        function f_color(){
+          if (brh >= mbrh) {
+          document.getElementById("sky-result44").style.color = "Green";}
+          else {
+            document.getElementById("sky-result44").style.color = "Red";
+          }
+          }
+          f_color();
+          
         document.getElementById("sky-result5").innerHTML = [
           "Tfz Länge = " + ll.toFixed(0) + " m",
         ];
