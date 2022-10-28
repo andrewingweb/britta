@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sichern</title>
+    <link rel="stylesheet" href="styles.css">
+    
+  </head>
+  <body>
+    <main>
+        <header>
+          
+          <h1>Sichern</h1>
+          
+        </header>
+        
+        <div>
+    <div class="message">
+      <h2 style="font-weight: bold; line-height: 1">Fahrzeuge/Züge/Zugteile</h2>
+        <h3 style="font-weight: bold; line-height: 1">mit wirkender selbsttätiger Bremse</h3>
+        <h4 style="font-weight: normal; line-height: 0,75">gegen unbeabsichtigte Bewegung sichern</h4>
+      <p></p>
+
+      
+      
+      
+      <label>Wagenzuggewicht [t]</label>
+      <input type="number" id="gg" /><br /><br />
+      <label>Neigung </label>
+      <input type="number" id="ng" style="width: 50px"/> o/oo<br /><br />
+<br>
+      <input
+        class="button"
+        type="button"
+        onclick="skyCalculate();"
+        value="Rechnen"
+      /><br />
+      <br />
+      <br />
+
+      <div id="sky-result"></div>
+      <br /><br />
+      <div id="sky-result1"></div>
+      <br /><br />
+    <hr />
+<p style="line-height: 1.5; font-weight: bold"> <em> Neigungen über 20 o/oo ist der Feststellbremse an jedem Fahrzeug anzuziehen.</em></p>
+    <script>
+      function skyCalculate() {
+        
+        var gg = parseInt(document.getElementById("gg").value);
+        var ng = parseInt(document.getElementById("ng").value);
+        var hbg;
+        
+        if (ng > 0 && ng <= 2.5) {
+            hbg = 600;
+        };
+        if (ng > 2.5 && ng <= 3){
+            hbg = 500;
+        }
+        if (ng > 3 && ng <= 4){
+            hbg = 400;
+        }
+        if (ng > 4 && ng <= 5){
+            hbg = 300;
+        }
+        if (ng > 5 && ng <= 7.5){
+            hbg = 200;
+        }
+        if (ng > 7.5 && ng <= 10){
+            hbg = 160;
+        }
+        if (ng > 10 && ng <= 15){
+            hbg = 100;
+        }
+        if (ng > 15 && ng <= 20){
+            hbg = 80;
+        }
+        
+        
+
+
+        
+
+        
+
+        document.getElementById("sky-result").innerHTML = [
+          "Handbremsen = " + Math.ceil(gg / hbg),
+        ];
+        
+
+    }
+    </script>
+  </body>
+</html>
