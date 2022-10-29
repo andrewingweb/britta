@@ -27,9 +27,9 @@
       
       
       <label style="font-weight: bold; font-size: 1.2em;">Wagenzuggewicht 
-      <input type="text" id="gg" style="width: 50px"/> t</label><br /><br><br>
+      <input type="number" id="gg" style="width: 50px"/> t</label><br /><br><br>
       <label style="font-weight: bold; font-size: 1.2em;">Neigung 
-      <input type="text" id="ng" style="width: 30px"/> ‰</label> <br /><br />
+      <input type="number" id="ng" style="width: 40px"/> ‰</label> <br /><br />
       
 <br><br><br><br>
       <input
@@ -56,49 +56,40 @@
       function skyCalculate() {
         
         var gg = parseInt(document.getElementById("gg").value);
-        var ng = parseInt(document.getElementById("ng").value);
+        var ng = (document.getElementById("ng").value);
         var hbg;
+        var x = ng * 10;
         
-        if (ng > 0 && ng <= 2.5) {
+        if (x >= 0 && x < 26){
             hbg = 600;
-        };
-        if (ng > 2.5 && ng <= 3){
+        }
+        if (x > 25 && x < 31){
             hbg = 500;
         }
-        if (ng > 3 && ng <= 4){
+        if (x > 30 && x < 41){
             hbg = 400;
         }
-        if (ng > 4 && ng <= 5){
+        if (x > 40 && x < 51){
             hbg = 300;
         }
-        if (ng > 5 && ng <= 7.5){
+        if (x > 50 && x < 76){
             hbg = 200;
         }
-        if (ng > 7.5 && ng <= 10){
+        if (x > 75 && x < 101){
             hbg = 160;
         }
-        if (ng > 10 && ng <= 15){
+        if (x > 100 && x < 151){
             hbg = 100;
         }
-        if (ng > 15 && ng <= 20){
+        if (x > 150 && x < 201){
             hbg = 80;
         }
-
-        let a = "Alle";
-
-        
-        
-        
-
-
-        
-
-        
 
         document.getElementById("sky-result").innerHTML = [
           "Feststellbremsen = " + Math.ceil(gg / hbg),
         ];
-        if (ng >= 20){
+        
+        if (x >= 200){
             document.getElementById("sky-result").innerHTML = [
           "Feststellbremsen = Alle" ,
         ];
