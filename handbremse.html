@@ -77,6 +77,10 @@
         if (ng > 15 && ng <= 20){
             hbg = 80;
         }
+
+        let a = "Alle";
+
+        
         
         
 
@@ -88,7 +92,11 @@
         document.getElementById("sky-result").innerHTML = [
           "Handbremsen = " + Math.ceil(gg / hbg),
         ];
-        
+        if (ng >= 20){
+            document.getElementById("sky-result").innerHTML = [
+          "Handbremsen = Alle" ,
+        ];
+        }
 
     }
     </script>
