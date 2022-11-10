@@ -182,6 +182,26 @@
       </div>
       <p></p>
       <hr />
+      <div class="message" id="countdown"><br><h1>Wachsamkeitshelfer</h1><p style="line-height: 1.5">
+        bei Müdigkeit mach lieber eine Pause. Bis dahin druck den "Play" taste und den "PZB Wachsamkeitstaste" gleichzeitig!
+      </p>
+        <div id="sos1">30</div><br><br><br><br><br><br>
+        <br><br><br>
+      </div>
+      <div class="message" class="action-list">
+        <button id="stop">
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/pause--v1.png" />
+        </button>
+        <button id="start">
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/play--v1.png" />
+        </button>
+        <button id="reset">
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/stop.png" />
+        </button>
+        <audio id="timeout_audio"></audio>
+      </div>
+      <p></p>
+      <hr />
       <div class="message">
         <a href="DU Ruhrort Hafen.html" target="_blank"><button>DU-Ruhrort Hafen</button></a><br>
         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
@@ -595,6 +615,76 @@
       //  num2 = document.getElementById("secondNumber").value;
       //  document.getElementById("result").innerHTML = num1 / num2;
       //}
+    </script>
+    <script>// Select Countdown container
+      const countContainer = document.getElementById("sos1");
+      
+      // Select action buttons
+      const startButton = document.getElementById("start");
+      const stopButton = document.getElementById("stop");
+      const resetButton = document.getElementById("reset");
+      
+      // Select timeout Audio element
+      const timeoutAudio = document.getElementById("timeout_audio");
+      
+      // variable to store count
+      var remainingTime = 30;
+      
+      // variable to store time interval
+      var timer;
+      
+      // Variable to track whether timer is running or not
+      var isStopped = true;
+      
+      // Function to start Timer
+      const startTimer = () => {
+        if (isStopped) {
+          isStopped = false;
+          countContainer.innerHTML = remainingTime;
+          timer = setInterval(renderTime, 1000);
+        }
+      };
+      
+      // Function to stop Timer
+      const stopTimer = () => {
+        isStopped = true;
+        if (timer) {
+          clearInterval(timer);
+        }
+      };
+      
+      // Function to reset Timer
+      const resetTimer = () => {
+        isStopped = true;
+        clearInterval(timer);
+        remainingTime = 30;
+        countContainer.innerHTML = remainingTime;
+      };
+      
+      // Initialize timeout sound
+      timeoutAudio.src = "http://soundbible.com/grab.php?id=1233&type=mp3";
+      timeoutAudio.load();
+      
+      // Attach onclick event to buttons
+      startButton.onclick = startTimer;
+      resetButton.onclick = resetTimer;
+      stopButton.onclick = stopTimer;
+      
+      // function to display time
+      const renderTime = () => {
+        // decement time
+        remainingTime -= 1;
+        // render count on the screen
+        countContainer.innerHTML = remainingTime;
+        // timeout on zero
+        if (remainingTime === 0) {
+          isStopped = true;
+          clearInterval(timer);
+          // Play audio on timeout
+          timeoutAudio.play();
+          remainingTime = 30;
+        }
+      };
     </script>
   </body>
 </html>

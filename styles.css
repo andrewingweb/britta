@@ -360,6 +360,16 @@ table th {
     margin-left: 40%;
     background: linear-gradient(to right top, #f90310, #db3a86);
 }
+#sos1{
+    border: 5px solid rgb(250, 247, 247);
+    border-radius: 15px;
+    color: rgb(252, 251, 250);
+    padding: 35px;
+    font-size: 5em;
+    position: absolute;
+    margin-left: 0.5%;
+    background: linear-gradient(to right top, #f90310, #db3a86);
+}
 button {
     margin: 5px;
     font-size: 1.2rem;
